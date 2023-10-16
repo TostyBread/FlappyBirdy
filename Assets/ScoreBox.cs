@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScoreBox : MonoBehaviour
 {
     private ScoreManager _scoreManager;
+    public GameObject ScoreAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -15,12 +16,13 @@ public class ScoreBox : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D col)
     {
+
         if (!col.gameObject.CompareTag("Player"))
             return;
 
         if (_scoreManager == null)
             return;
-
-        _scoreManager.AddScore();
+            _scoreManager.AddScore();
+        GameObject.Instantiate(ScoreAudio, transform.position, Quaternion.identity);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
 
-    public float MoveSpeed = 1f;
+    public float MoveSpeed = 0.7f;
 
     
 
